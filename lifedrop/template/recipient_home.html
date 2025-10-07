@@ -10,50 +10,54 @@
     />
   </head>
   <body class="bg-light">
+
     <div class="container mt-5">
+    
+
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>First Name</th>
+            <th>Gender</th>
+            <th>Mobile number</th>
+            <th>Email</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ recipient_data }}
+          <tr>
+             
+            <td>{{ recipient_data.fname }}</td>
+          
+           
+            <td>{{ recipient_data.gender }}</td>
+          
+            <td>{{ recipient_data.mob }}</td>
+            
+            
+
+            <td>{{ recipient_data.userid.email }}</td>
+            <td>{{ recipient_data.userid.username }}</td>
+          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   <div class="container mt-5"> 
       <div class="card shadow p-4">
         <h3 class="mb-4 text-center">Search Recipient</h3>
 
-        <form action="{% url 'recipient' %}" method="post">
+         <form action="{% url 'recipient_home' %}" method="post">
           {% csrf_token %}
-         
-          <div class="mb-3">
-            <label for="fname" class="form-label">First Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="fname"
-              name="fname"
-              required
-            />
-          </div>
 
-         
-          <div class="mb-3">
-            <label for="gender" class="form-label">Gender</label>
-            <select class="form-select" id="gender" name="gender" required >
-              <option value="">--Select Gender--</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="mob" class="form-label">Phone Number</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="mob"
-              name="mob"
-              required
-            />
-          </div>
 
           
           <div class="mb-3">
             <label for="blood" class="form-label">Blood Group</label>
-            <select class="form-select" id="blood" name="blood" >
+            <select class="form-select" id="blood" name="blood" required>
               <option value="">--Select Blood Group--</option>
               <option value="A+ve">A+ve</option>
               <option value="A-ve">A-ve</option>
@@ -92,7 +96,9 @@
      
           <div class="text-center mt-4">
             <button type="submit" class="btn btn-success">Search</button>
-            <a href="/" class="btn btn-secondary">Cancel</a>
+            <a href="{% url 'recipient_profile' %}" class="btn btn-primary me-2">Profile</a>
+            <a href="{% url 'Logout' %}" class="btn btn-danger me-2">Logout</a>
+
           </div>
         </form>
       </div>

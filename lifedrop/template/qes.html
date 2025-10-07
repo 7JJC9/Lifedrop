@@ -1,70 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <table border="1" cellspacing="0" cellpadding="10">
-      <tr>
-        <th>1.Are you feeling healthy and well today? </th><br>
-        <th>2. Do you have any fever, cold, or infection currently?</th>
-        <th>3. Have you taken any antibiotics in the past 7 days?</th>
-        <th>4. Do you have any chronic illness (like diabetes, heart disease, or asthma)?</th>
-        <th>5. Have you ever been diagnosed with hepatitis, HIV/AIDS, or tuberculosis?</th>
-        <th>6. Have you ever had cancer or received chemotherapy?</th>
-        <th>7. Do you have epilepsy or frequent seizures?</th>
-        <th>8. Are you currently taking any long-term medications?</th>
-        <th>9. Have you donated blood in the last 3 months (for men) or 4 months (for women)?</th>
-        <th>10. Have you undergone any major surgery in the past 6 months?/th>
-        <th>11. Have you had a tattoo, piercing, or acupuncture in the last 6 months?</th>
-        <th>12. Have you received any vaccinations in the past 1 month?</th>
-        <th>13. Have you traveled recently to a malaria-affected or epidemic area?</th>
-        <th>14. Have you ever used intravenous (IV) drugs not prescribed by a doctor?</th>
-        <th>15. Do you have multiple sexual partners or high-risk sexual behavior?</th>
-        <th>16. Have you consumed alcohol in the past 24 hours?</th>
-        <th>17. Do you smoke regularly?</th>
-        <th>18. Have you fainted or felt weak during previous blood donations?</th>
-        <th>19. Do you weigh more than 50 kg ?</th>
-        <th>20. Are you between 18 and 65 years old?</th>
-        
-      </tr>
-        
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eligibility Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light p-4">
+
+  <div class="container">
+    <h3 class="mb-4">Eligibility Details</h3>
+
+    <table class="table table-bordered">
+      <thead>
         <tr>
-         
-            <td>{{qas.1.answers}}</td>
-            <td>{{qas.2.answers}}</td>
-            <td>{{qas.3.answers}}</td>
-            <td>{{qas.4.answers}}</td>
-            <td>{{qas.5.answers}}</td>
-            <td>{{qas.6.answers}}</td>
-            <td>{{qas.7.questions}}</td>
-            <td>{{qas.8.questions}}</td>
-            <td>{{qas.9.questions}}</td>
-            <td>{{qas.10.questions}}</td>
-            <td>{{qas.11.questions}}</td>
-            <td>{{qas.12.questions}}</td>
-            <td>{{qas.13.questions}}</td>
-            <td>{{qas.14.questions}}</td> 
-            <td>{{qas.15.questions}}</td>
-            <td>{{qas.16.questions}}</td>
-            <td>{{qas.17.questions}}</td>
-            <td>{{qas.18.questions}}</td>
-            <td>{{qas.19.questions}}</td>
-            <td>{{qas.20.questions}}</td>
-                    
-
-
-                    
-
-
-            
-
-          
+          <th>Question</th>
+          <th>Answer</th>
         </tr>
-    </table><br>
-     <a href="{% url 'donor_home' %}" class="btn btn-primary me-2"><button>Back</button></a>
-  </body>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Are you feeling healthy and well today?</td>
+          <td>{{ eligibility_data.ans1 }}</td>
+        </tr>
+        <tr>
+          <td>2. Do you have any fever, cold, or infection currently?</td>
+          <td>{{ eligibility_data.ans2 }}</td>
+        </tr>
+        <tr>
+          <td>3. Have you taken any antibiotics in the past 7 days?</td>
+          <td>{{ eligibility_data.ans3 }}</td>
+        </tr>
+        <tr>
+          <td>4. Do you have any chronic illness (like diabetes, heart disease, or asthma)?</td>
+          <td>{{ eligibility_data.ans4 }}</td>
+        </tr>
+        <tr>
+          <td>5. Have you ever been diagnosed with hepatitis, HIV/AIDS, or tuberculosis?</td>
+          <td>{{ eligibility_data.ans5 }}</td>
+        </tr>
+        <tr>
+          <td>6. Have you ever had cancer or received chemotherapy?</td>
+          <td>{{ eligibility_data.ans6 }}</td>
+        </tr>
+        <tr>
+          <td>7. Do you have epilepsy or frequent seizures?</td>
+          <td>{{ eligibility_data.ans7 }}</td>
+        </tr>
+        <tr>
+          <td>8. Are you currently taking any long-term medications?</td>
+          <td>{{ eligibility_data.ans8 }}</td>
+        </tr>
+        <tr>
+          <td>9. Have you donated blood in the last 3 months (for men) or 4 months (for women)?</td>
+          <td>{{ eligibility_data.ans9 }}</td>
+        </tr>
+        <tr>
+          <td>10. Have you undergone any major surgery in the past 6 months?</td>
+          <td>{{ eligibility_data.ans10 }}</td>
+        </tr>
+        <tr>
+          <td>11. Have you had a tattoo, piercing, or acupuncture in the last 6 months?</td>
+          <td>{{ eligibility_data.ans11 }}</td>
+        </tr>
+        <tr>
+          <td>12. Have you received any vaccinations in the past 1 month?</td>
+          <td>{{ eligibility_data.ans12 }}</td>
+        </tr>
+        <tr>
+          <td>13. Have you traveled recently to a malaria-affected or epidemic area?</td>
+          <td>{{ eligibility_data.ans13 }}</td>
+        </tr>
+        <tr>
+          <td>14. Have you ever used intravenous (IV) drugs not prescribed by a doctor?</td>
+          <td>{{ eligibility_data.ans14 }}</td>
+        </tr>
+        <tr>
+          <td>15. Do you have multiple sexual partners or high-risk sexual behavior?</td>
+          <td>{{ eligibility_data.ans15 }}</td>
+        </tr>
+        <tr>
+          <td>16. Have you consumed alcohol in the past 24 hours?</td>
+          <td>{{ eligibility_data.ans16 }}</td>
+        </tr>
+        <tr>
+          <td>17. Do you smoke regularly?</td>
+          <td>{{ eligibility_data.ans17 }}</td>
+        </tr>
+        <tr>
+          <td>18. Have you fainted or felt weak during previous blood donations?</td>
+          <td>{{ eligibility_data.ans18 }}</td>
+        </tr>
+        <tr>
+          <td>19. Do you weigh more than 50 kg?</td>
+          <td>{{ eligibility_data.ans19 }}</td>
+        </tr>
+        <tr>
+          <td>20. Are you between 18 and 65 years old?</td>
+          <td>{{ eligibility_data.ans20 }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="{% url 'donor_home' %}" class="btn btn-secondary">Back</a>
+  </div>
+
+</body>
 </html>

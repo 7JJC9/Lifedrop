@@ -19,15 +19,22 @@
 
  
   <div class="d-flex justify-content-center gap-3">
-    <form action="donor" method="post">
+    <form action="signin" method="post">
       {% csrf_token %}
-      <button type="submit" class="btn btn-success px-4">Donor</button>
+      <button type="submit" class="btn btn-success px-4">Sign in</button>
     </form>
 
-    <form action="recipient" method="post">
+
+    <form action="register" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary px-4">Sign up</button>
+    </form>
+
+
+    <!-- <form action="recipient" method="post">
       {% csrf_token %}
       <button type="submit" class="btn btn-danger px-4">Recipient</button>
-    </form>
+    </form> -->
   </div>
 
 </body>

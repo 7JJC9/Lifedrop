@@ -26,9 +26,6 @@
             <th>Mobile number</th>
             <th>Address</th>
             <th>District</th>
-            <th>Donated date</th>
-            <th>Certificate</th>
-
              <th>Email</th>
             <th>Username</th>
 
@@ -46,15 +43,7 @@
             <td>{{ data.mob }}</td>
             <td>{{ data.address }}</td>
             <td>{{ data.district }}</td>
-            <td>{{ data.donateddate }}</td>
-        
-            <td> {% if data.certificate %}
-            <img src="{{ data.certificate.url}}" alt="Certificate" width="100">
-            <br>
-            <a href="{{ data.certificate.url }}" target="_blank">Download</a>
-            {% else %}
-            No Certificate Uploaded
-            {% endif %}</td>
+            
 
             <td>{{ data.userid.email }}</td>
             <td>{{ data.userid.username }}</td>
@@ -65,11 +54,12 @@
 
     <div class="text-center mt-4">
     
-      <a href="{% url 'donor_edit' %}" class="btn btn-success me-2">Edit</a>
-      <a href="{% url 'donor_home' %}" class="btn btn-primary me-2">Back</a> <br>
+     
+      <a href="{% url 'recipient' %}" class="btn btn-primary me-2">Back</a> <br>
 
       <div class="text-center mt-3">
 
+     
       </div>
 
     </div>

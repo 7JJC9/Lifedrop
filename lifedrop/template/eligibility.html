@@ -9,18 +9,18 @@
 <body class="bg-light">
   <div class="container my-5">
     <h2 class="text-center mb-4">Blood Donor Eligibility </h2>
-    <form action="{% url 'eligibility' %}"method="post" class="p-4 border rounded bg-white shadow">
+    <form action="{% url 'eligibility' userid=user.id  %}"method="post" class="p-4 border rounded bg-white shadow">
 
       {% csrf_token %}
      
       <div class="mb-3">
         <label class="form-label">1. Are you feeling healthy and well today?</label><br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="q1" value="Yes" required>
+          <input class="form-check-input border border-3 border-primary p-1"  type="radio" name="q1" value="Yes" required>
           <label class="form-check-label">Yes</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="q1" value="No">
+          <input class="form-check-input border border-3 border-primary p-1" type="radio" name="q1" value="No">
           <label class="form-check-label">No</label>
         </div>
       </div>
@@ -28,140 +28,140 @@
       <div class="mb-3">
         <label class="form-label">2. Do you have any fever, cold, or infection currently?</label><br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="q2" value="Yes" required>
+          <input class="form-check-input border border-3 border-primary p-1" type="radio" name="q2" value="Yes" required>
           <label class="form-check-label">Yes</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="q2" value="No">
+          <input class="form-check-input border border-3 border-primary p-1" type="radio" name="q2" value="No">
           <label class="form-check-label">No</label>
         </div>
       </div>
 
       <div class="mb-3">
         <label class="form-label">3. Have you taken any antibiotics in the past 7 days?</label><br>
-        <input class="form-check-input" type="radio" name="q3" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q3" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1" type="radio" name="q3" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q3" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">4. Do you have any chronic illness (like diabetes, heart disease, or asthma)?</label><br>
-        <input class="form-check-input" type="radio" name="q4" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q4" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1" type="radio" name="q4" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q4" value="No"> No
       </div>
 
        <div class="mb-3">
         <label class="form-label">5. Have you ever been diagnosed with hepatitis, HIV/AIDS, or tuberculosis?</label><br>
-        <input class="form-check-input" type="radio" name="q5" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q5" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q5" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q5" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">6. Have you ever had cancer or received chemotherapy?</label><br>
-        <input class="form-check-input" type="radio" name="q6" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q6" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1" type="radio" name="q6" value="Yes" required> Yes
+        <input class="form-check-input border border-3 border-primary p-1  ms-3" type="radio" name="q6" value="No"> No
       </div>
 
 
        <div class="mb-3">
         <label class="form-label">7. Do you have epilepsy or frequent seizures?</label><br>
-        <input class="form-check-input" type="radio" name="q7" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q7" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q7" value="Yes" required> Yes
+        <input class="form-check-input border border-3 border-primary p-1 ms-3" type="radio" name="q7" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">8. Are you currently taking any long-term medications?</label><br>
-        <input class="form-check-input" type="radio" name="q8" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q8" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q8" value="Yes" required> Yes
+        <input class="form-check-input border border-3 border-primary p-1 ms-3" type="radio" name="q8" value="No"> No
       </div>
 
 
 
      <div class="mb-3">
         <label class="form-label">9.Have you donated blood in the last 3 months (for men) or 4 months (for women)?</label><br>
-        <input class="form-check-input" type="radio" name="q9" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q9" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q9" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q9" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">10.Have you undergone any major surgery in the past 6 months?</label><br>
-        <input class="form-check-input" type="radio" name="q10" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q10" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q10" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q10" value="No"> No
       </div>
 
 
 
        <div class="mb-3">
         <label class="form-label">11. Have you had a tattoo, piercing, or acupuncture in the last 6 months?</label><br>
-        <input class="form-check-input" type="radio" name="q11" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q11" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q11" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q11" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">12. Have you received any vaccinations in the past 1 month?</label><br>
-        <input class="form-check-input" type="radio" name="q12" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q12" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q12" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q12" value="No"> No
       </div>
 
 
 
        <div class="mb-3">
         <label class="form-label">13. Have you traveled recently to a malaria-affected or epidemic area?</label><br>
-        <input class="form-check-input" type="radio" name="q13" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q13" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q13" value="Yes" required> Yes
+        <input class="form-check-input border border-3 border-primary p-1  ms-3" type="radio" name="q13" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">14. Have you ever used intravenous (IV) drugs not prescribed by a doctor?</label><br>
-        <input class="form-check-input" type="radio" name="q14" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q14" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q14" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q14" value="No"> No
       </div>
 
 
        <div class="mb-3">
         <label class="form-label">15. Do you have multiple sexual partners or high-risk sexual behavior?</label><br>
-        <input class="form-check-input" type="radio" name="q15" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q15" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q15" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q15" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">16. Have you consumed alcohol in the past 24 hours?</label><br>
-        <input class="form-check-input" type="radio" name="q16" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q16" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q16" value="Yes" required> Yes
+        <input class="form-check-input border border-3 border-primary p-1  ms-3" type="radio" name="q16" value="No"> No
       </div>
 
 
 
        <div class="mb-3">
         <label class="form-label">17. Do you smoke regularly?</label><br>
-        <input class="form-check-input" type="radio" name="q17" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q17" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q17" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q17" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">18. Have you fainted or felt weak during previous blood donations?</label><br>
-        <input class="form-check-input" type="radio" name="q18" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q18" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q18" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q18" value="No"> No
       </div>
 
 
 
        <div class="mb-3">
         <label class="form-label">19. Do you weigh more than 50 kg ?</label><br>
-        <input class="form-check-input" type="radio" name="q19" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q19" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q19" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q19" value="No"> No
       </div>
 
       <div class="mb-3">
         <label class="form-label">20. Are you between 18 and 65 years old?</label><br>
-        <input class="form-check-input" type="radio" name="q20" value="Yes" required> Yes
-        <input class="form-check-input ms-3" type="radio" name="q20" value="No"> No
+        <input class="form-check-input border border-3 border-primary p-1 " type="radio" name="q20" value="Yes" required> Yes
+        <input class="form-check-input  border border-3 border-primary p-1 ms-3" type="radio" name="q20" value="No"> No
       </div>
 
       <div class="text-center mt-4">
-        <button type="submit" class="btn btn-primary px-4">Submit</button>
-        <!-- <a href="{% url 'view' %}"><button type="reset" class="btn btn-success px-4 ms-2">View</button></a> -->
-         <a href="{% url 'view' %}" class="btn btn-success px-4 ms-2">View</a>
+        <button type="submit" class="btn btn-success px-4">Submit</button>
         <button type="reset" class="btn btn-secondary px-4 ms-2">Reset</button>
+        <a href="{% url 'donor_home' %}" class="btn btn-primary me-2">Back</a>
+
       </div>
     </form>
   </div>
