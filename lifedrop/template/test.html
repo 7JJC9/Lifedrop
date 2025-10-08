@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Notification</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Donor Name</th><br>
+            <th>Blood Group</th>
+            <th>Clicked At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for send in sent_donors %}
+        <tr>
+            <td>{{ send.donor.fname }}</td>
+            <td>{{ send.donor.bloodgroup }}</td>
+            <td>{{ send.created_at }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">You have not sent any donors yet.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

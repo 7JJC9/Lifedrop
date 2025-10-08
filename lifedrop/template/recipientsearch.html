@@ -34,7 +34,7 @@
           {% for donor in filter_data %}
           <tr>
             <td>
-              <!-- <input type="radio" name="select" value="{{ donor.id }}" required> -->
+              
               <form action="{% url 'send_donor' %}" method="post">
                 {% csrf_token %}
                 <button type="submit"   name="select" value="{{ donor.id }}" class="btn btn-primary">Send</button>
@@ -50,16 +50,18 @@
             <td>{{ donor.donateddate }}</td>
 
             <td> {% if donor.certificate %}
-            <img src="{{ data.certificate.url}}" alt="Certificate" width="100">
+            <img src="{{ donor.certificate.url}}" alt="Certificate" width="100">
             <br>
-            <a href="{{ data.certificate.url }}" target="_blank">Download</a>
+            <a href="{{ donor.certificate.url }}" target="_blank">Download</a>
             {% else %}
             No Certificate Uploaded
-            {% endif %}</td>
-            <td><a href="{% url 'click'%}">Click</a></td>
+            {% endif %}
+            </td>
+            <td><a href="{% url 'click' donor.id %}">Click</a></td>
+             </tr>
 
             {% endfor %}
-          </tr>
+         
         </tbody>
       </table>
     </div>
